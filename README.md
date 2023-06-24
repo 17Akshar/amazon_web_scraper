@@ -1,0 +1,5 @@
+    // const title = await pages.evaluate((el)=>el.querySelector('h2 > a > span').textContent,product)
+    // const asin = await pages.evaluate((el)=>el.getAttribute('data-asin'),product)
+    // const price = await pages.evaluate((el)=>el.querySelector('.a-price > span>.a-price-whole').textContent,product)
+    // const rating = await pages.evaluate((el)=>el.querySelector('.a-icon-star-mini>.a-icon-alt').textContent,product) 
+    // const mrp = await pages.evaluate((el)=>.querySelector('.a-text-price>.a-offscreen').textContent,product) 
