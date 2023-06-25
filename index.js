@@ -29,7 +29,7 @@ const main = async ()=>{
       "--single-process",
       "--no-zygote",
     ],
-    executablePath:process.env.NODE_ENV ==='production'? process.env.PUPPETEER_EXECUTABLE_PATH : puppeteer.executablePath(),
+    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH 
   })
   const pages = await browser.newPage()
   await pages.goto(new_url,{timeout: 0})
