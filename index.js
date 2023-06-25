@@ -1,4 +1,5 @@
 const express = require('express')
+require('dotenv').config()
 const cors = require('cors')
 const app = express()
 app.use(cors({
@@ -21,7 +22,15 @@ const main = async ()=>{
     p_asin:"",
     p_price:""
   }
-  const browser = await puppeteer.launch({headless:true})
+  const browser = await puppeteer.launch({
+    args:[
+      "--disable-setuid-sandbox",
+      "--no-sandbox",
+      "--single-process",
+      "--no-zygote",
+    ],
+    executablePath:process.env.NODE_ENV ==='production'? process.env.PUPPETEER_EXECUTABLE_PATH : puppeteer.executablePath(),
+  })
   const pages = await browser.newPage()
   await pages.goto(new_url,{timeout: 0})
   while(i!==7){
