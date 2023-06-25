@@ -21,7 +21,7 @@ const main = async ()=>{
     p_asin:"",
     p_price:""
   }
-  const browser = await puppeteer.launch()
+  const browser = await puppeteer.launch({headless:true})
   const pages = await browser.newPage()
   await pages.goto(new_url,{timeout: 0})
   while(i!==7){
