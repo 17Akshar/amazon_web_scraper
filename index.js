@@ -11,8 +11,8 @@ var new_url;
 var i = 0
 app.get('/',async (req,res)=>{
   new_url = `https://www.amazon.in/s?k=${req.query.item}&ref=nb_sb_noss`;
-  await main()
-  await res.send(data)
+  const result = await main()
+  res.send(result)
 })
 var data = []
 const main = async ()=>{
@@ -70,6 +70,8 @@ const main = async ()=>{
     await i++;
   }
   await browser.close()
+  return data;
+
 }
 function strtonum(string){
   return parseInt(string.replace(/,/g,'').replace('₹',"").replace('.',''))
